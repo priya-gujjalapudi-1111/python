@@ -1,0 +1,9 @@
+list1 = ['A', '   ', ' ', 'B', '            ', 'C']
+remove_space = [x.strip(' ') for x in list1]
+print(remove_space)
+delete_empty = [ele for ele in list1 if ele.strip()]
+print(delete_empty)
+x = [2, 8, 1, 4, 6, 3, 7]
+print("Sorted List returned :", sorted(x))
+print("Reverse sort :", sorted(x, reverse=True))
+print("\nOriginal list not modified :", x)

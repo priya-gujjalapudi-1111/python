@@ -1,2 +1,41 @@
-dfghjkcvbnm,
-shjsmd
+Question:
+
+Stepping on the stone by the players.Unpolished stone marked as "0" once the player stepin the stone have to mark with "X"  now no one can step in to it.In very first move player can jump into anystone, but after that you cant step forward or backward.
+
+If a player is unable to move to the next free, stone, then that person loses the game..
+Both players are playing optimally and trying to win. Find the winner. Since player1 is elder, ahe will play first.
+
+If player! wins, return "yes", else return "No"
+Ex:
+Input
+6
+1 0 0 0 1 1
+
+output:
+yes
+
+Solution:
+
+n=int(input())
+l1=list(map(int,input().strip().split()))[:n]
+a="x1"
+for i in range(n):
+    if l1[i]==0 and a=="x1":
+        l1[i]="x1"
+        a="x2"
+    elif l1[i]==0 and a=="x2":
+        l1[i]="x2"
+        a="x1"
+    else:
+        l1[i]=1
+for i in range(n-1,0,-1):
+    if l1[i]=="x1":
+        print("Yes")
+        break
+    elif l1[i]=="x2":
+        print("No")
+        break
+    else:
+        continue
+    
+
